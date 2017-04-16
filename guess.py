@@ -7,9 +7,15 @@ magicNumber = random.randint(minNumber, maxNumber)
 message = "Please guess a number between {0} and {1}"
 print(message.format(minNumber, maxNumber))
 
-guess = int(input())
+found = False
 
-if guess == magicNumber:
-    print("Correct!")
-else:
-    print("Wrong! The magic number is: ", magicNumber)
+while not found:
+    guess = int(input())
+
+    if guess == magicNumber:
+        print("Correct!")
+        found = True
+    elif guess < magicNumber:
+        print("Wrong! Guess a higher number.")
+    else:
+        print("Wrong! Guess a lower number.")
